@@ -61,6 +61,9 @@ Specifying the ```--continue-on-failure``` flag allows you to continue the build
 ## Usage limits
 Your token will be rate-limited to a reasonable number of scans. Currently this is set to 100 scans per day, though this could change. If you hit rate-limiting issues please do get in touch to discuss your use-case.  
 
+## Issues and feedback
+If you come across any problems or would like to give us feedback on MicroScanner we encourage you to raise issues here on GitHub. 
+
 ## Community Edition vs Enterprise Edition
 
 The freely-available Community Edition of microscanner scans for vulnerabilities in the image's installed packages. 
