@@ -1,4 +1,4 @@
-# microscanner
+# MicroScanner
 WORK IN PROGRESS - Scan your container images for vulnerabilities
 
 ## Overview
@@ -7,18 +7,13 @@ Aqua Security's *microscanner* lets you check your container images for vulnerab
 ## Registering for a token
 To use microscanner you'll first need to register for a token. 
 
-**TODO!!** Either: 
-* builds for Mac & Windows as well as Linux so people can run locally to do the registration
-* or a containerized version for them to run for this step.
-Either way, get the instructions up to date here
-
 ```
-$ microscanner --register
+$ docker run --rm -it aquasec/microscanner --register <email address>
 ```
 
-This will prompt you for your email address, and we'll send a microscanner token to that email address. 
+We'll send a microscanner token to the email address you specify. 
 
-By submitting your email address through the registration process you are agreeing to the [Terms and Conditions for microscanner]() **TODO!!**.
+This process will prompt you to agree to the [Terms and Conditions for microscanner]() **TODO!!**.
 
 ## Running microscanner 
 The microscanner is designed to be run as part of building a container image. You add the microscanner executable into the image, and a step to run the scan, which will examine the contents of the image filesystem for vulnerabilities. If high severity vulnerabilities are found, this will fail the image build (though you can force the scanner to exit with zero by setting the ```--continue-on-failure``` flag).
@@ -27,10 +22,16 @@ The microscanner is designed to be run as part of building a container image. Yo
 The following lines add microscanner to a Dockerfile, and execute it.
 ```
 ADD https://get.aquasec.com/microscanner
+RUN chmod +x microscanner
 RUN microscanner <TOKEN> [--continue-on-failure]
 ```
 
-**TODO!!** Decide whether it's called microscanner-ce or microscanner 
+### Windows version
+There is also a Windows version of the executable, which is added to a Dockerfile in a similar way. **TODO!!** Check this
+```
+ADD https://get.aquasec.com/microscanner.exe
+RUN microscanner.exe <TOKEN> [--continue-on-failure]
+```
 
 ### Example 
 Example Dockerfile
@@ -38,6 +39,7 @@ Example Dockerfile
 FROM debian:jessie-slim
 RUN apt-get update && apt-get -y install ca-certificates
 ADD https://get.aquasec.com/microscanner
+RUN chmod +x microscanner
 ARG token
 RUN /microscanner ${token}
 RUN echo "No vulnerabilities!"
@@ -58,4 +60,10 @@ Specifying the ```--continue-on-failure``` flag allows you to continue the build
 
 ## Usage limits
 Your token will be rate-limited to a reasonable number of scans. Currently this is set to 100 scans per day, though this could change. If you hit rate-limiting issues please do get in touch to discuss your use-case.  
+
+## Community Edition vs Enterprise Edition
+
+The freely-available Community Edition of microscanner scans for vulnerabilities in the image's installed packages. 
+
+Customers of Aqua's commercial Container Security Product have access to additional Enterprise Edition scanning features such as scanning files for vulnerabilities, and scanning for sensitive data included in a container image.  **TODO!!** Check description of Enterprise Edition / commercial version. 
 
