@@ -46,7 +46,7 @@ RUN echo "No vulnerabilities!"
 ```
 Pass the token obtained on registration in at build time.
 ```
-$ docker build --build-arg=token=<TOKEN> .
+$ docker build --build-arg=token=<TOKEN> --no-cache .
 ```
 ### Continue on failure
 Specifying the ```--continue-on-failure``` flag allows you to continue the build even if high severity issues are found. **TODO!!** Are the results logged out as part of the build? 
@@ -55,6 +55,7 @@ Specifying the ```--continue-on-failure``` flag allows you to continue the build
 
 * Since the token is a [secret value](https://blog.aquasec.com/managing-secrets-in-docker-containers), it's a good idea to pass this in as a build argument rather than hard-coding it into your Dockerfile. 
 * The step that runs microscanner needs to appear in your Dockerfile after you have added or built files and directories for the container image. Build steps happen in the order they are defined in the Dockerfile, so anything that gets added to the image after the microscanner is run won't be scanned for vulnerabilities. 
+* The --no-cache option ensures that microcanner is run every time, which is necessary even if your image contents haven't changed in case new vulnerabilities have been discovered. Of course this forces all the steps in the Dockerfile to be re-run, which could slow down your build. To allow for earlier stages to be cached but still ensure that microscanner is run every time you might want to consider a [cache-busting technique such as the one described here](https://github.com/moby/moby/issues/1996#issuecomment-185872769).
 
 **TODO!!** Anything we might want to say about multi-stage builds? E.g. having the scan step as a final stage? 
 
