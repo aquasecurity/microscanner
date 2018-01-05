@@ -62,6 +62,16 @@ Specifying the ```--continue-on-failure``` flag allows you to continue the build
 ## Usage limits
 Your token will be rate-limited to a reasonable number of scans. Currently this is set to 100 scans per day, though this could change. If you hit rate-limiting issues please do get in touch to discuss your use-case.  
 
+## Supported operating system packages
+
+* Debian >= 7, unstable
+* Ubuntu LTS releases >= 12.04
+* Red Hat Enterprise Linux >= 5
+* CentOS >= 5
+* Alpine >= 3.3
+* Oracle Linux >= 5
+* **TODO!!** Windows
+
 ## Issues and feedback
 If you come across any problems or would like to give us feedback on MicroScanner we encourage you to raise issues here on GitHub. 
 
@@ -70,4 +80,3 @@ If you come across any problems or would like to give us feedback on MicroScanne
 The freely-available Community Edition of microscanner scans for vulnerabilities in the image's installed packages. 
 
 Customers of Aqua's commercial Container Security Product have access to additional Enterprise Edition scanning features such as scanning files for vulnerabilities, and scanning for sensitive data included in a container image.  **TODO!!** Check description of Enterprise Edition / commercial version. 
-
