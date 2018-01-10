@@ -2,7 +2,7 @@
 WORK IN PROGRESS - Scan your container images for vulnerabilities
 
 ## Overview
-Aqua Security's *microscanner* lets you check your container images for vulnerabilities. If your image (including any of its dependencies) has any known high-severity issue, microscanner can fail the image build, making it easy to include as a step in your CI/CD pipeline. 
+Aqua Security's *microscanner* lets you check your container images for vulnerabilities. If your image has any known high-severity issue, microscanner can fail the image build, making it easy to include as a step in your CI/CD pipeline. 
 
 ## Registering for a token
 To use microscanner you'll first need to register for a token. 
