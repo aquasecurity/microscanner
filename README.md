@@ -21,7 +21,7 @@ The microscanner is designed to be run as part of building a container image. Yo
 ### Adding microscanner to your Dockerfile
 The following lines add microscanner to a Dockerfile, and execute it.
 
-**TODO!! NOTES FOR BETA TESTERS** The latest version of microscanner is not yet in place at https://get.aquasec.com. Instead, you'll need a local copy of the binary, which we will send you (or you can extract from the aquasec/microscanner:latest container image if you prefer). Instead of ```ADD https://get.aquasec.com/microscanner``` use ```COPY microscanner /microscanner```
+**TODO!! NOTES FOR BETA TESTERS** The latest version of microscanner is not yet in place at https://get.aquasec.com. Instead, you'll need a local copy of the microscanner binary, which you can download from the Releases page in this GitHub repo. Once you have downloaded it to your local directory, instead of ```ADD https://get.aquasec.com/microscanner``` use ```COPY microscanner /microscanner```
 
 ```
 ADD https://get.aquasec.com/microscanner
