@@ -31,6 +31,23 @@ RUN chmod +x microscanner
 RUN microscanner <TOKEN> [--continue-on-failure]
 ```
 
+### Add ca-certificates if needed
+You may also need to add ca-certificates to the image if they are not already build into the parent image, or added in your Dockerfile, so that microscanner can make an HTTPS connection. For example (Debian): 
+
+```
+RUN apt-get update && apt-get -y install ca-certificates
+```
+
+or (Alpine):
+```
+RUN apk add --no-cache ca-certificates && update-ca-certificates
+```
+
+When you build the image, missing CA certificates will result in an error like this: 
+```
+ERROR: failed fetching server information: request failed: Get https://microscanner.aquasec.com/api: x509: failed to load system roots and no roots provided
+```
+
 ### Windows version
 There is also a Windows version of the executable, which is added to a Dockerfile in a similar way. **TODO!!** Check this
 ```
