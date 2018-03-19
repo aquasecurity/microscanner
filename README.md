@@ -23,8 +23,6 @@ The microscanner is designed to be run as part of building a container image. Yo
 ### Adding microscanner to your Dockerfile
 The following lines add microscanner to a Dockerfile, and execute it.
 
-**TODO!! NOTES FOR BETA TESTERS** The latest version of microscanner is not yet in place at https://get.aquasec.com. Instead, you'll need a local copy of the microscanner binary, which you can download from the Releases page in this GitHub repo. Once you have downloaded it to your local directory, instead of ```ADD https://get.aquasec.com/microscanner``` use ```COPY microscanner /microscanner```
-
 ```
 ADD https://get.aquasec.com/microscanner
 RUN chmod +x microscanner
@@ -48,17 +46,8 @@ When you build the image, missing CA certificates will result in an error like t
 ERROR: failed fetching server information: request failed: Get https://microscanner.aquasec.com/api: x509: failed to load system roots and no roots provided
 ```
 
-### Windows version
-There is also a Windows version of the executable, which is added to a Dockerfile in a similar way. **TODO!!** Check this
-```
-ADD https://get.aquasec.com/microscanner.exe
-RUN microscanner.exe <TOKEN> [--continue-on-failure]
-```
-
 ### Example 
 Example Dockerfile
-
-**TODO!! NOTES FOR BETA TESTERS** See note above about using a local copy of the microscanner binary
 
 ```
 FROM debian:jessie-slim
@@ -75,6 +64,13 @@ $ docker build --build-arg=token=<TOKEN> --no-cache .
 ```
 ### Continue on failure
 Specifying the ```--continue-on-failure``` flag allows you to continue the build even if high severity issues are found. **TODO!!** Are the results logged out as part of the build? 
+
+### Remove microscanner from image 
+You may choose to remove the microscanner executable from the image by changing the RUN line to 
+
+```
+RUN /microscanner ${token} && rm /microscanner
+```
 
 ## Best practices 
 
@@ -95,10 +91,6 @@ Your token will be rate-limited to a reasonable number of scans. Currently this 
 * CentOS >= 5
 * Alpine >= 3.3
 * Oracle Linux >= 5
-* **TODO!!** Windows
-
-## Issues and feedback
-If you come across any problems or would like to give us feedback on MicroScanner we encourage you to raise issues here on GitHub. 
 
 ## Aqua Security edition comparison
 
@@ -115,4 +107,8 @@ Secrets management |   |   | X
 Compliance checks |   |   | X 
 
 The Community Edition of microscanner checks images for package vulnerabilities only. Aqua's commercial customers have access to deeper image analysis including checks for file vulnerabilities and sensitive data. 
+
+## Issues and feedback
+If you come across any problems or would like to give us feedback on MicroScanner we encourage you to raise issues here on GitHub. 
+
 
