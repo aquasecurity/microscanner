@@ -100,8 +100,19 @@ Your token will be rate-limited to a reasonable number of scans. Currently this 
 ## Issues and feedback
 If you come across any problems or would like to give us feedback on MicroScanner we encourage you to raise issues here on GitHub. 
 
-## Community Edition vs Enterprise Edition
+## Aqua Security edition comparison
 
-The freely-available Community Edition of microscanner scans for vulnerabilities in the image's installed packages. 
+Capability | MicroScanner | [Aqua Pay-Per-Scan](https://aws.amazon.com/marketplace/pp/B075SDHDM1) | [Aqua CSP](https://www.aquasec.com/products/aqua-container-security-platform/) 
+-- | --------------- | --------------- | ----------------- 
+Package vulnerability scanning | X | X | X 
+File vulnerability scanning |   | X | X 
+Sensitive data scanning |   | X | X 
+Embedded in image build | X |   | 
+Integration with CI/CD tooling |   | X | X
+Runtime protection |   |   | X 
+Block untrusted images |   |   | X 
+Secrets management |   |   | X 
+Compliance checks |   |   | X 
 
-Customers of Aqua's commercial Container Security Product have access to additional Enterprise Edition scanning features such as scanning files for vulnerabilities, and scanning for sensitive data included in a container image.  **TODO!!** Check description of Enterprise Edition / commercial version. 
+The Community Edition of microscanner checks images for package vulnerabilities only. Aqua's commercial customers have access to deeper image analysis including checks for file vulnerabilities and sensitive data. 
+
