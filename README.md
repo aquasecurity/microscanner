@@ -6,7 +6,7 @@ Aqua Security's MicroScanner lets you check your container images for vulnerabil
 
 > Note: this freely-available Community Edition enables scanning by adding some lines to your Dockerfile, incorporating the *microscanner* binary as part of the image build. This is aimed at individual developers and open source projects who may not have control over the full CI/CD pipeline. The <a href="https://aquasec.com">Aqua Security commercial solution</a> scans container images without requiring any modification to the image or its Dockerfile, and is designed to be hooked into your CI/CD pipeline after the image build is complete, and/or to scan images from a public or private container registry. 
 
-> Another note: this freely-available Community Edition of MicroScanner scans for vulnerabilities in the image's installed packages. Aqua's commercial customers have access to additional Enterprise Edition scanning features, such as scanning files for vulnerabilities, and scanning for sensitive data included in a container image. 
+> Another note: this freely-available Community Edition of MicroScanner scans for vulnerabilities in the image's installed packages. Aqua's commercial customers have access to [additional Enterprise Edition scanning features](#aqua-security-edition-comparison), such as scanning files for vulnerabilities, and scanning for sensitive data included in a container image. 
 
 ## Registering for a token
 To use MicroScanner you'll first need to register for a token. 
@@ -64,6 +64,8 @@ Pass the token obtained on registration in at build time.
 ```
 $ docker build --build-arg=token=<TOKEN> --no-cache .
 ```
+The output includes JSON output describing any vulnerabilities found in your image.
+
 ### Continue on failure
 Specifying the ```--continue-on-failure``` flag allows you to continue the build even if high severity issues are found. 
 
@@ -79,8 +81,7 @@ RUN /microscanner ${token} && rm /microscanner
 * Since the token is a [secret value](https://blog.aquasec.com/managing-secrets-in-docker-containers), it's a good idea to pass this in as a build argument rather than hard-coding it into your Dockerfile. 
 * The step that runs *microscanner* needs to appear in your Dockerfile after you have added or built files and directories for the container image. Build steps happen in the order they are defined in the Dockerfile, so anything that gets added to the image after *microscanner* is run won't be scanned for vulnerabilities. 
 * The --no-cache option ensures that microcanner is run every time, which is necessary even if your image contents haven't changed in case new vulnerabilities have been discovered. Of course this forces all the steps in the Dockerfile to be re-run, which could slow down your build. To allow for earlier stages to be cached but still ensure that microscanner is run every time you might want to consider a [cache-busting technique such as the one described here](https://github.com/moby/moby/issues/1996#issuecomment-185872769).
-
-**TODO!!** Anything we might want to say about multi-stage builds? E.g. having the scan step as a final stage? 
+* Don't want to build *microscanner* into the image you're deploying? You can create a separate Dockerfile dedicated for vulnerability scanning which starts FROM the image to be scanned, and adds and runs *microscanner*. The build based on this Dockerfile would be used purely for scanning purposes, and based on the output of this separate build you can make decisions on whether to deploy that image. 
 
 ## Fair use policy
 Your token will be rate-limited to a reasonable number of scans. Currently this is set to 100 scans per day per token, but if you hit rate-limiting issues please do get in touch to discuss your use-case.
