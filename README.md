@@ -103,10 +103,13 @@ File vulnerability scanning |   | X | X
 Sensitive data scanning |   | X | X 
 Embedded in image build | X |   | 
 Integration with CI/CD tooling |   | X | X
+Integration with private registries |   |   | X
 Runtime protection |   |   | X 
 Block untrusted images |   |   | X 
 Secrets management |   |   | X 
 Compliance checks |   |   | X 
+No Dockerfile changes required |   | X | X
+
 
 The Community Edition of microscanner checks images for package vulnerabilities only. Aqua's commercial customers have access to deeper image analysis including checks for file vulnerabilities and sensitive data. 
 
