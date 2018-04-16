@@ -17,7 +17,7 @@ $ docker run --rm -it aquasec/microscanner --register <email address>
 
 We'll send a token to the email address you specify. 
 
-This process will prompt you to agree to the [Terms and Conditions for MicroScanner]() **TODO!!**.
+This process will prompt you to agree to the [Terms and Conditions for MicroScanner](TERMS.md).
 
 ## Running *microscanner* 
 MicroScanner is designed to be run as part of building a container image. You add the *microscanner* executable into the image, and a step to run the scan, which will examine the contents of the image filesystem for vulnerabilities. If high severity vulnerabilities are found, this will fail the image build (though you can force the scanner to exit with zero by setting the ```--continue-on-failure``` flag).
@@ -84,7 +84,7 @@ RUN /microscanner ${token} && rm /microscanner
 * Don't want to build *microscanner* into the image you're deploying? You can create a separate Dockerfile dedicated for vulnerability scanning which starts FROM the image to be scanned, and adds and runs *microscanner*. The build based on this Dockerfile would be used purely for scanning purposes, and based on the output of this separate build you can make decisions on whether to deploy that image. 
 
 ## Fair use policy
-Your token will be rate-limited to a reasonable number of scans. Currently this is set to 100 scans per day per token, but if you hit rate-limiting issues please do get in touch to discuss your use-case.
+Your token will be rate-limited to a reasonable number of scans. If you hit rate-limiting issues please do get in touch to discuss your use-case.
 
 ## Supported operating system packages
 
