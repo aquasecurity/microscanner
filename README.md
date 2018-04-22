@@ -1,4 +1,5 @@
-# MicroScanner
+![MicroScanner](microscanner.png)
+
 A free-to-use tool that scans container images for package vulnerabilities.
 
 ## Overview
