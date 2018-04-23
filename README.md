@@ -103,14 +103,14 @@ Capability | MicroScanner | [Aqua Pay-Per-Scan](https://aws.amazon.com/marketpla
 Package vulnerability scanning | X | X | X 
 File vulnerability scanning |   | X | X 
 Sensitive data scanning |   | X | X 
-Embedded in image build | X |   | 
+Embedded in image build | X |   | optional
 Integration with CI/CD tooling |   | X | X
-Integration with private registries |   |   | X
 Runtime protection |   |   | X 
 Block untrusted images |   |   | X 
 Secrets management |   |   | X 
 Compliance checks |   |   | X 
 No Dockerfile changes required |   | X | X
+Private registries | X | X | X
 
 ## Issues and feedback
 If you come across any problems or would like to give us feedback on MicroScanner we encourage you to raise issues here on GitHub. 
