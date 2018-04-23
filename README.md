@@ -115,4 +115,6 @@ Private registries | X | X | X
 ## Issues and feedback
 If you come across any problems or would like to give us feedback on MicroScanner we encourage you to raise issues here on GitHub. 
 
-
+## Binary hash
+$ md5 microscanner
+MD5 (microscanner) = ed68908a0b8afef502ddee96d0bb2915
