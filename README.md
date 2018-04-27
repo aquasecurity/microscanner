@@ -100,17 +100,21 @@ Your token will be rate-limited to a reasonable number of scans. If you hit rate
 
 Capability | MicroScanner | [Aqua Pay-Per-Scan](https://aws.amazon.com/marketplace/pp/B075SDHDM1) | [Aqua CSP](https://www.aquasec.com/products/aqua-container-security-platform/) 
 -- | --------------- | --------------- | ----------------- 
+Pricing model | Free | Per scan | Enterprise license
+Embedded in image build | X |   | optional
+No Dockerfile changes required |   | X | X
+Integration with CI/CD tooling |   | X | X
+Registry scan |   | X | X
 Package vulnerability scanning | X | X | X 
 File vulnerability scanning |   | X | X 
 Sensitive data scanning |   | X | X 
-Embedded in image build | X |   | optional
-Integration with CI/CD tooling |   | X | X
-Runtime protection |   |   | X 
+Image configuration checks |   | X | X
+Malware scanning |   | X | X
+OSS license checks |   | X | X
 Block untrusted images |   |   | X 
 Secrets management |   |   | X 
-Compliance checks |   |   | X 
-No Dockerfile changes required |   | X | X
-Private registries | X | X | X
+Runtime protection |   |  | X 
+CIS Compliance checks |   |   | X 
 
 ## Issues and feedback
 If you come across any problems or would like to give us feedback on MicroScanner we encourage you to raise issues here on GitHub. 
