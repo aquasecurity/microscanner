@@ -76,6 +76,16 @@ You may choose to remove the *microscanner* executable from the image by changin
 ```
 RUN /microscanner ${token} && rm /microscanner
 ```
+### One-liner
+The following line installs, runs, and cleans up *microscanner* in one layer so that it doesn't add to the size of the final image.
+```
+RUN apk add --no-cache ca-certificates && update-ca-certificates && \
+    wget -O /microscanner https://get.aquasec.com/microscanner && \
+    chmod +x /microscanner && \
+    /microscanner <token> && \
+    rm -rf /microscanner
+```
+(If you need the ca-certificates in the image for other purposes, you may want to leave that as a separate step in the Dockerfile.)
 
 ## Best practices 
 
