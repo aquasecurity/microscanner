@@ -87,12 +87,18 @@ RUN apk add --no-cache ca-certificates && update-ca-certificates && \
 ```
 (If you need the ca-certificates in the image for other purposes, you may want to leave that as a separate step in the Dockerfile.)
 
+### Scan an existing image
+[microscanner-wrapper](https://github.com/lukebond/microscanner-wrapper) makes it easy to use MicroScanner to scan existing images. 
+
+It works by creating a new temporary Dockerfile dedicated for vulnerability scanning which starts FROM the image to be scanned, and adds and runs *microscanner*. This is used to build a temporary image which can then be discarded. Based on the output you can make decisions on whether to deploy the image.
+
+This approach also has the advantage that the *microscanner* executable doesn't need to be built into the image you eventually deploy. 
+
 ## Best practices 
 
 * Since the token is a [secret value](https://blog.aquasec.com/managing-secrets-in-docker-containers), it's a good idea to pass this in as a build argument rather than hard-coding it into your Dockerfile. 
 * The step that runs *microscanner* needs to appear in your Dockerfile after you have added or built files and directories for the container image. Build steps happen in the order they are defined in the Dockerfile, so anything that gets added to the image after *microscanner* is run won't be scanned for vulnerabilities. 
 * The --no-cache option ensures that microcanner is run every time, which is necessary even if your image contents haven't changed in case new vulnerabilities have been discovered. Of course this forces all the steps in the Dockerfile to be re-run, which could slow down your build. To allow for earlier stages to be cached but still ensure that microscanner is run every time you might want to consider a [cache-busting technique such as the one described here](https://github.com/moby/moby/issues/1996#issuecomment-185872769).
-* Don't want to build *microscanner* into the image you're deploying? You can create a separate Dockerfile dedicated for vulnerability scanning which starts FROM the image to be scanned, and adds and runs *microscanner*. The build based on this Dockerfile would be used purely for scanning purposes, and based on the output of this separate build you can make decisions on whether to deploy that image. 
 
 ## Fair use policy
 Your token will be rate-limited to a reasonable number of scans. If you hit rate-limiting issues please do get in touch to discuss your use-case.
