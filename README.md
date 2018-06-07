@@ -74,7 +74,7 @@ Specifying the ```--continue-on-failure``` flag allows you to continue the build
 Specifying the ```--no-verify``` flag allows you to continue the build even if CA certificates is not installed.
 
 ### HTML
-Specifying the ```--html``` flag provide output in HTML format.
+Specifying the ```--html``` flag provides output in HTML format.
 
 ### Remove microscanner from image
 You may choose to remove the *microscanner* executable from the image by changing the RUN line to
