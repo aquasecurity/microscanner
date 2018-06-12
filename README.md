@@ -15,6 +15,7 @@ To use MicroScanner you'll first need to register for a token.
 ```
 $ docker run --rm -it aquasec/microscanner --register <email address>
 ```
+Or get token by register here https://microscanner.aquasec.com/signup
 
 We'll send a token to the email address you specify.
 
