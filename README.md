@@ -143,4 +143,4 @@ If you come across any problems or would like to give us feedback on MicroScanne
 
 ## Binary hash
 $ md5 microscanner
-MD5 (microscanner) = 903794fee1983524c494e7bcff707853
+MD5 (microscanner) = d037e1c52d951093eaaf3f9138344e48
