@@ -1,0 +1,8 @@
+sudo: required
+language: ruby
+services:
+- docker
+script:
+- docker build --build-arg=token=$token --no-cache .
+dd:
+  secure: "mP7yWA4su2LAmSHNpSO2Xgsp5vZOtuEk5uTvonYAN7WstAXMpVpCiP4Tfo7ZFsTgA7LT2x6sBO5MkzJx1xbhKdh59WtoZBR68v1+toEzmBf0OuRY0nMxKErO1+4Tui3T5/bRJN+7WH7JoPv+UIPRs2n/71kg8hrOY2YOyViPOqpVCtY4t+Cfju2docYW1eGO1CXUw+3HycGVww0bc3ndIe8iAowC253pCekY3Hd62QE3bwEKefCZZEezp0ymj+7ceTG/GirQv1tTQFFZ9tAuH71gzaNEQh/+0rUbp/Oi7rm53zz+LUBhwWx33J2b7YpQEaDKKuA+qB0XWawXvKHFZJwaWOTVC5J9SdDovnSM/LPxdNq/thU7RPrMaHNjZJ1gW9Aub5cO2GN7U6EpMM17X+ueBhWQuN2EWp1PqvBvRrCerE9eHeFkiAdtKRRiStYzcxv58cn0aoJCGWK2xPME4AaDA+iy0u+mhM06gfspgwU2J0PU+beVBtvrkgEw9fvHCp67wEvM2u3/zrFk7hmYoXAeHn8+EYlAHhV2OsomDixOPmLneOf8fBgBvJGvCEfQAajMVIJEyK26NISKHrcCCjChLWWYyCrAAABzH3A7Afb8PkAas6K2rWa9PQ2RNGKO9tJXcGYDwo8SNBrX3rKwlkVaXoCnnrJBkvrjoGwNp/Y="
