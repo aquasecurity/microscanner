@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/aquasecurity/microscanner.svg?branch=master)](https://github.com/aquasecurity/microscanner)
+[![Build Status](https://travis-ci.org/aquasecurity/microscanner.svg?branch=master)](https://travis-ci.org/aquasecurity/microscanner)
 
 
 ![MicroScanner](microscanner.png)
