@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/aquasecurity/microscanner.svg?branch=master)](https://travis-ci.org/aquasecurity/microscanner)
+
+
 ![MicroScanner](microscanner.png)
 
 A free-to-use tool that scans container images for package vulnerabilities.

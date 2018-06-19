@@ -1,0 +1,9 @@
+sudo: required
+env:
+  global:
+    secure: "OJBOVe+nFQu+BNRegUPrGsmCVi1ujTlu047VucgKupacGxCWvHsdOOIowtskmwgW63XBr+cSmGgRCePg42pQ4KOMs9BbKEM5TvIzQ6GHYX0T56TOtRCmxZ8NfESP8kpgbY3ns0d1D8MTPqcc6clfB70z7qWVxJH9FhnXxt46qjuHtGLi/B3u5xjXQ51ioZm8HLrOgnNG81HYR1586MzzJ25vM0IViVRXAU2KGh0XbNT3BJTMukBIYyj4wzr/HwJ2l/CszTCYXfH/61D9+dT8u/BcXqFXb+fkK6Fs9PMdVg9uHio0fyvFUs1VApT4LnsJ/29zUTg9euV+P+Ea/u2NIjy4TmTEYvQsuOR87H7BS3xOEYPExcT95NttoCd4sTmljlOBCB9RtUbpiG457qSVixSyq928kGR/TPkKVKOaupJK3O3dGkyTqAsRk/WFNO6A6rp2uwMlzdZlNzIaXXGXDuSr02jVBQ4GKVDyrCVDEqTtQ6fDu0p/F6EX/PZCZZFWIiLkAzp2izsf4EIusF1W9/ETM+I8FkG4I4xI4OJpSxwfAQzQcKe7BWSjVWRwwaTyRp3NMeyiObBCv8+uCiTz0f4HpcPMRz1r71d7pioUvvoqbNlYdgf44TwQVLcrFtWefLzh5LQnmWZIycW8cuRTi6cBQ5P8GbnMjWNpWxWvVGU="
+
+services:
+- docker
+script:
+- docker build --build-arg=token=${token} --no-cache .
