@@ -32,7 +32,7 @@ MicroScanner is designed to be run as part of building a container image. You ad
 ### Adding *microscanner* to your Dockerfile
 The following lines add *microscanner* to a Dockerfile, and execute it.
 
-```
+```dockerfile
 ADD https://get.aquasec.com/microscanner /
 RUN chmod +x /microscanner
 RUN /microscanner <TOKEN> [--continue-on-failure]
@@ -41,12 +41,12 @@ RUN /microscanner <TOKEN> [--continue-on-failure]
 ### Add ca-certificates if needed
 You may also need to add ca-certificates to the image if they are not already build into the parent image, or added in your Dockerfile, so that *microscanner* can make an HTTPS connection. For example (Debian):
 
-```
+```dockerfile
 RUN apt-get update && apt-get -y install ca-certificates
 ```
 
 or (Alpine):
-```
+```dockerfile
 RUN apk add --no-cache ca-certificates && update-ca-certificates
 ```
 
@@ -58,7 +58,7 @@ ERROR: failed fetching server information: request failed: Get https://microscan
 ### Example
 Example Dockerfile
 
-```
+```dockerfile
 FROM debian:jessie-slim
 RUN apt-get update && apt-get -y install ca-certificates
 ADD https://get.aquasec.com/microscanner /
@@ -85,12 +85,12 @@ Specifying the ```--html``` flag provides output in HTML format.
 ### Remove microscanner from image
 You may choose to remove the *microscanner* executable from the image by changing the RUN line to
 
-```
+```dockerfile
 RUN /microscanner ${token} && rm /microscanner
 ```
 ### One-liner
 The following line installs, runs, and cleans up *microscanner* in one layer so that it doesn't add to the size of the final image.
-```
+```dockerfile
 RUN apk add --no-cache ca-certificates && update-ca-certificates && \
     wget -O /microscanner https://get.aquasec.com/microscanner && \
     chmod +x /microscanner && \
