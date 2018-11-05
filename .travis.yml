@@ -7,3 +7,10 @@ services:
 - docker
 script:
 - docker build --build-arg=token=${token} --no-cache .
+
+notifications:
+  email:
+    recipients:
+      - one@example.com
+    on_success: never 
+    on_failure: always
