@@ -8,8 +8,8 @@ A free-to-use tool that scans container images for package vulnerabilities.
 ## Overview
 Aqua Security's MicroScanner lets you check your container images for vulnerabilities. If your image has any known high-severity issue, MicroScanner can fail the image build, making it easy to include as a step in your CI/CD pipeline.
 
-For Jenkins, you can find the plug-in for MicroScanner [here](https://github.com/jenkinsci/aqua-microscanner-plugin).
-CircleCi users may utilize the Orb located [here.](#https://github.com/aquasecurity/circleci-orb-microscanner).
+- If you're using Jenkins, you can find the plug-in for MicroScanner [here](https://github.com/jenkinsci/aqua-microscanner-plugin).
+- CircleCi users can use the Orb located [here.](#https://github.com/aquasecurity/circleci-orb-microscanner).
 
 > Note: this freely-available Community Edition enables scanning by adding some lines to your Dockerfile, incorporating the *microscanner* binary as part of the image build. This is aimed at individual developers and open source projects who may not have control over the full CI/CD pipeline. The <a href="https://www.aquasec.com/use-cases/continuous-image-assurance/">Aqua Security commercial solution</a> scans container images without requiring any modification to the image or its Dockerfile, and is designed to be hooked into your CI/CD pipeline after the image build is complete, and/or to scan images from a public or private container registry.
 
