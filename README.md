@@ -150,5 +150,5 @@ If you come across any problems or would like to give us feedback on MicroScanne
 ## Binary hash
 ```sh
 $ md5 microscanner
-MD5 (microscanner) = d037e1c52d951093eaaf3f9138344e48
+MD5 (microscanner) = 1d911d709cb9efb02a4661926af979a6
 ```
