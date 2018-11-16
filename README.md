@@ -132,7 +132,7 @@ Capability | MicroScanner | [Aqua Pay-Per-Scan](https://aws.amazon.com/marketpla
 Pricing model | Free | Per scan | Enterprise license
 Embedded in image build | X |   | optional
 No Dockerfile changes required |   | X | X
-Integration with CI/CD tooling |   | X | X
+Integration with CI/CD tooling | X | X | X
 Registry scan |   | X | X
 Package vulnerability scanning | X | X | X
 File vulnerability scanning |   | X | X
