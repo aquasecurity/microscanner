@@ -150,6 +150,6 @@ If you come across any problems or would like to give us feedback on MicroScanne
 
 ## Binary hash
 ```sh
-$ md5 microscanner
-MD5 (microscanner) = 1d911d709cb9efb02a4661926af979a6
+$ sha256sum microscanner
+72fd95ef5d343915c37ad487ba83da56e4d79d2f999cbdb2bfb1afda0d6bd7bb  microscanner
 ```

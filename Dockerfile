@@ -1,6 +1,8 @@
 FROM alpine:latest
-RUN apk add --no-cache ca-certificates && update-ca-certificates
-ADD https://get.aquasec.com/microscanner /
-RUN chmod +x /microscanner
 ARG token
-RUN /microscanner ${token}
+RUN apk add --no-cache ca-certificates \
+  && update-ca-certificates \
+  && wget https://get.aquasec.com/microscanner -O /microscanner \
+  && echo "72fd95ef5d343915c37ad487ba83da56e4d79d2f999cbdb2bfb1afda0d6bd7bb  /microscanner" | sha256sum -c - \
+  && chmod +x /microscanner \
+  && /microscanner ${token}
