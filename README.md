@@ -150,5 +150,5 @@ If you come across any problems or would like to give us feedback on MicroScanne
 ## Binary hash
 ```sh
 $ sha256sum microscanner
-72fd95ef5d343915c37ad487ba83da56e4d79d2f999cbdb2bfb1afda0d6bd7bb  microscanner
+8e01415d364a4173c9917832c2e64485d93ac712a18611ed5099b75b6f44e3a5  microscanner
 ```
