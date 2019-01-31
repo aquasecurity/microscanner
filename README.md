@@ -134,7 +134,7 @@ Embedded in image build | X |   | optional
 No Dockerfile changes required |   | X | X
 Integration with CI/CD tooling | X | X | X
 Registry scan |   | X | X
-Package vulnerability scanning | X | X | X
+OS Package vulnerability scanning | X | X | X
 File vulnerability scanning |   | X | X
 Sensitive data scanning |   | X | X
 Image configuration checks |   | X | X
