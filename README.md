@@ -70,7 +70,7 @@ RUN echo "No vulnerabilities!"
 ```
 Pass the token obtained on registration in at build time.
 ```
-$ docker build --build-arg=token=<TOKEN> --no-cache .
+$ docker build --build-arg token=<TOKEN> --no-cache .
 ```
 The output includes JSON output describing any vulnerabilities found in your image.
 
