@@ -1,0 +1,10 @@
+FROM fedora
+MAINTAINER hvijay.cse@gmail.com
+RUN sudo  useradd -m -p $(openssl passwd vijay) Harsh
+RUN sudo yum install shellinabox selinux-policy-3.14.3-29.fc30.noarch libselinux-utils-2.9-1.fc30.x86_64 -y
+RUN sudo dnf install -y openssh-server
+Run sudo yum install gcc
+RUN sudo echo "Harsh   ALL=(ALL)       ALL" >>/etc/sudoers
+RUN sudo echo 'SELINUX=disabled' >/etc/selinux/config
+RUN sudo echo 'SELINUXTYPE=targeted' >>/etc/selinux/config
+CMD ["shellinaboxd", "--no-beep", "--port=4200", "--cert=/var/lib/shellinabox","--disable-ssl-menu", "--user=shellinabox", "--service=/:LOGIN"]
