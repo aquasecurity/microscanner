@@ -5,6 +5,28 @@
 
 A free-to-use tool that scans container images for package vulnerabilities.
 
+Table of Contents
+=================
+
+* [Overview](#overview)
+* [Registering for a token](#registering-for-a-token)
+* [Running <em>microscanner</em>](#running-microscanner)
+    * [Adding <em>microscanner</em> to your Dockerfile](#adding-microscanner-to-your-dockerfile)
+    * [Add ca-certificates if needed](#add-ca-certificates-if-needed)
+    * [Example](#example)
+    * [Continue on failure](#continue-on-failure)
+    * [No verify](#no-verify)
+    * [HTML](#html)
+    * [Remove microscanner from image](#remove-microscanner-from-image)
+    * [One-liner](#one-liner)
+    * [Scan an existing image](#scan-an-existing-image)
+* [Best practices](#best-practices)
+* [Fair use policy](#fair-use-policy)
+* [Supported operating system packages](#supported-operating-system-packages)
+* [Aqua Security edition comparison](#aqua-security-edition-comparison)
+* [Issues and feedback](#issues-and-feedback)
+* [Binary hash](#binary-hash)
+
 ## Overview
 Aqua Security's MicroScanner lets you check your container images for vulnerabilities. If your image has any known high-severity issue, MicroScanner can fail the image build, making it easy to include as a step in your CI/CD pipeline.
 
