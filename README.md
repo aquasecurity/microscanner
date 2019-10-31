@@ -153,3 +153,5 @@ If you come across any problems or would like to give us feedback on MicroScanne
 $ sha256sum microscanner
 8e01415d364a4173c9917832c2e64485d93ac712a18611ed5099b75b6f44e3a5  microscanner
 ```
+## Security Tip
+Never Hardcode Access Token In Your Application Try To Make This Thing As One Of Priorty Constraint While Development (Hackers Are EveryWhere !!) :)
