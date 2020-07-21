@@ -2,7 +2,7 @@
 
 Now that you can [embed Trivy in a Dockerfile](https://github.com/aquasecurity/trivy#embed-in-dockerfile), we recommend using our open source scanner [Trivy](https://github.com/aquasecurity/trivy) for vulnerability scanning your container images, as well as filesystems and source code repositories. 
 
-**MicroScanner will be fully retired in December 2020** 
+Existing MicroScanner tokens continue to work, and we will give notice before retiring the MicroScanner service. 
 
 ---
 
