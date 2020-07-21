@@ -1,14 +1,15 @@
 # MicroScanner is now deprecated in favour of Trivy
 
-Now that you can [embed Trivy in a Dockerfile](https://github.com/aquasecurity/trivy#embed-in-dockerfile), we recommend using our open source scanner [Trivy](https://github.com/aquasecurity/trivy) for vulnerability scanning your container images, as well as filesystems and source code repositories. 
+Now that you can [embed Trivy in a Dockerfile](https://github.com/aquasecurity/trivy#embed-in-dockerfile), we recommend using our open source scanner [Trivy](https://github.com/aquasecurity/trivy) for vulnerability scanning your container images, as well as filesystems and source code repositories.
 
-Existing MicroScanner tokens continue to work, and we will give notice before retiring the MicroScanner service. 
+Existing MicroScanner tokens continue to work, and we will give notice before retiring the MicroScanner service.
 
 ---
 
-[![Build Status](https://travis-ci.org/aquasecurity/microscanner.svg?branch=master)](https://travis-ci.org/aquasecurity/microscanner)
-
 ![MicroScanner](microscanner.png)
+
+[![Build Status](https://travis-ci.org/aquasecurity/microscanner.svg?branch=master)](https://travis-ci.org/aquasecurity/microscanner)
+[![Docker image](https://images.microbadger.com/badges/version/aquasec/microscanner.svg)](https://microbadger.com/images/aquasec/microscanner "Get your own version badge on microbadger.com")
 
 A free-to-use tool that scans container images for package vulnerabilities.
 
@@ -39,9 +40,9 @@ Aqua Security's MicroScanner lets you check your container images for vulnerabil
 - If you're using Jenkins, you can find the plug-in for MicroScanner [here](https://github.com/jenkinsci/aqua-microscanner-plugin).
 - CircleCi users can use the Orb located [here.](https://github.com/aquasecurity/circleci-orb-microscanner)
 
-> Note: this freely-available Community Edition enables scanning by adding some lines to your Dockerfile, incorporating the *microscanner* binary as part of the image build. This is aimed at individual developers and open source projects who may not have control over the full CI/CD pipeline. The <a href="https://www.aquasec.com/use-cases/continuous-image-assurance/">Aqua Security commercial solution</a> scans container images without requiring any modification to the image or its Dockerfile, and is designed to be hooked into your CI/CD pipeline after the image build is complete, and/or to scan images from a public or private container registry.
+> Note: This freely-available Community Edition enables scanning by adding some lines to your Dockerfile, incorporating the *microscanner* binary as part of the image build. This is aimed at individual developers and open source projects who may not have control over the full CI/CD pipeline. The <a href="https://www.aquasec.com/use-cases/continuous-image-assurance/">Aqua Security commercial solution</a> scans container images without requiring any modification to the image or its Dockerfile, and is designed to be hooked into your CI/CD pipeline after the image build is complete, and/or to scan images from a public or private container registry.
 
-> Another note: this freely-available Community Edition of MicroScanner scans for vulnerabilities in the image's installed packages. Aqua's commercial customers have access to [additional Enterprise Edition scanning features](#aqua-security-edition-comparison), such as scanning files for vulnerabilities, and scanning for sensitive data included in a container image.
+> Another note: This freely-available Community Edition of MicroScanner scans for vulnerabilities in the image's installed packages. Aqua's commercial customers have access to [additional Enterprise Edition scanning features](#aqua-security-edition-comparison), such as scanning files for vulnerabilities, and scanning for sensitive data included in a container image.
 
 ## Registering for a token
 To use MicroScanner you'll first need to register for a token.
@@ -51,7 +52,7 @@ $ docker run --rm -it aquasec/microscanner --register <email address>
 ```
 Or get a token by registering here https://microscanner.aquasec.com/signup
 
-We'll send a token to the email address you specify.
+We'll send you a token to the email address you specify.
 
 This process will prompt you to agree to the [Terms and Conditions for MicroScanner](TERMS.md).
 
@@ -154,7 +155,7 @@ Your token will be rate-limited to a reasonable number of scans. If you hit rate
 * Oracle Linux >= 5
 
 ## Issues and feedback
-MicroScanner is now deprecated. If you have any issues replacing MicroScanner with Trivy, please raise those as issues on the [Trivy repository](https://github.com/aquasecurity/trivy/issues). 
+MicroScanner is now deprecated. If you have any issues replacing MicroScanner with Trivy, please raise those as issues on the [Trivy repository](https://github.com/aquasecurity/trivy/issues).
 
 ## Binary hash
 ```sh
