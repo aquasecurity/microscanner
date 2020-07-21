@@ -1,5 +1,12 @@
-[![Build Status](https://travis-ci.org/aquasecurity/microscanner.svg?branch=master)](https://travis-ci.org/aquasecurity/microscanner)
+# MicroScanner is now deprecated in favour of Trivy
 
+Now that you can [embed Trivy in a Dockerfile](https://github.com/aquasecurity/trivy#embed-in-dockerfile), we recommend using our open source scanner [Trivy](https://github.com/aquasecurity/trivy) for vulnerability scanning your container images, as well as filesystems and source code repositories. 
+
+Existing MicroScanner tokens continue to work, and we will give notice before retiring the MicroScanner service. 
+
+---
+
+[![Build Status](https://travis-ci.org/aquasecurity/microscanner.svg?branch=master)](https://travis-ci.org/aquasecurity/microscanner)
 
 ![MicroScanner](microscanner.png)
 
@@ -23,7 +30,6 @@ Table of Contents
 * [Best practices](#best-practices)
 * [Fair use policy](#fair-use-policy)
 * [Supported operating system packages](#supported-operating-system-packages)
-* [Aqua Security edition comparison](#aqua-security-edition-comparison)
 * [Issues and feedback](#issues-and-feedback)
 * [Binary hash](#binary-hash)
 
@@ -147,28 +153,8 @@ Your token will be rate-limited to a reasonable number of scans. If you hit rate
 * Alpine >= 3.3
 * Oracle Linux >= 5
 
-## Aqua Security edition comparison
-
-Capability | MicroScanner | [Aqua Pay-Per-Scan](https://aws.amazon.com/marketplace/pp/B075SDHDM1) | [Aqua CSP](https://www.aquasec.com/products/aqua-container-security-platform/)
--- | --------------- | --------------- | -----------------
-Pricing model | Free | Per scan | Enterprise license
-Embedded in image build | X |   | optional
-No Dockerfile changes required |   | X | X
-Integration with CI/CD tooling | X | X | X
-Registry scan |   | X | X
-OS Package vulnerability scanning | X | X | X
-File vulnerability scanning |   | X | X
-Sensitive data scanning |   | X | X
-Image configuration checks |   | X | X
-Malware scanning |   | X | X
-OSS license checks |   | X | X
-Block untrusted images |   |   | X
-Secrets management |   |   | X
-Runtime protection |   |  | X
-CIS Compliance checks |   |   | X
-
 ## Issues and feedback
-If you come across any problems or would like to give us feedback on MicroScanner we encourage you to raise issues here on GitHub.
+MicroScanner is now deprecated. If you have any issues replacing MicroScanner with Trivy, please raise those as issues on the [Trivy repository](https://github.com/aquasecurity/trivy/issues). 
 
 ## Binary hash
 ```sh
