@@ -4,6 +4,10 @@ Now that you can [embed Trivy in a Dockerfile](https://github.com/aquasecurity/t
 
 Existing MicroScanner tokens continue to work, and we will give notice before retiring the MicroScanner service.
 
+This [video](https://youtu.be/cCJhN9nl1NY) explains more about replacing MicroScanner with Trivy. 
+
+[![Replacing MicroScanner with Trivy](http://i3.ytimg.com/vi/cCJhN9nl1NY/hqdefault.jpg)](https://youtu.be/cCJhN9nl1NY "Replacing MicroScanner with Trivy")
+
 ---
 
 ![MicroScanner](microscanner.png)
