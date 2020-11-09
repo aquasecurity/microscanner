@@ -15,7 +15,7 @@ This [video](https://youtu.be/cCJhN9nl1NY) explains more about replacing MicroSc
 [![Build Status](https://travis-ci.org/aquasecurity/microscanner.svg?branch=master)](https://travis-ci.org/aquasecurity/microscanner)
 [![Docker image](https://images.microbadger.com/badges/version/aquasec/microscanner.svg)](https://microbadger.com/images/aquasec/microscanner "Get your own version badge on microbadger.com")
 
-A free-to-use tool that scans container images for package vulnerabilities.
+A free-to-use tool that scans container images for package vulnerabilities. **Deprecated** please use Trivy instead, as described at the top of this README.
 
 Table of Contents
 =================
@@ -49,7 +49,7 @@ Aqua Security's MicroScanner lets you check your container images for vulnerabil
 > Another note: This freely-available Community Edition of MicroScanner scans for vulnerabilities in the image's installed packages. Aqua's commercial customers have access to [additional Enterprise Edition scanning features](#aqua-security-edition-comparison), such as scanning files for vulnerabilities, and scanning for sensitive data included in a container image.
 
 ## Registering for a token
-To use MicroScanner you'll first need to register for a token.
+To use MicroScanner you'll first need to register for a token. *Since MicroScanner is now deprecated, no new tokens are being issued.* 
 
 ```
 $ docker run --rm -it aquasec/microscanner --register <email address>
