@@ -1,8 +1,6 @@
-# MicroScanner is now deprecated in favour of Trivy
+# MicroScanner is now retired in favour of Trivy
 
 Now that you can [embed Trivy in a Dockerfile](https://github.com/aquasecurity/trivy#embed-in-dockerfile), we recommend using our open source scanner [Trivy](https://github.com/aquasecurity/trivy) for vulnerability scanning your container images, as well as filesystems and source code repositories.
-
-Existing MicroScanner tokens continue to work, and we will give notice before retiring the MicroScanner service.
 
 This [video](https://youtu.be/cCJhN9nl1NY) explains more about replacing MicroScanner with Trivy. 
 
@@ -15,7 +13,7 @@ This [video](https://youtu.be/cCJhN9nl1NY) explains more about replacing MicroSc
 [![Build Status](https://travis-ci.org/aquasecurity/microscanner.svg?branch=master)](https://travis-ci.org/aquasecurity/microscanner)
 [![Docker image](https://images.microbadger.com/badges/version/aquasec/microscanner.svg)](https://microbadger.com/images/aquasec/microscanner "Get your own version badge on microbadger.com")
 
-A free-to-use tool that scans container images for package vulnerabilities. **Deprecated** please use Trivy instead, as described at the top of this README.
+A free-to-use tool that scans container images for package vulnerabilities. **Retired** please use Trivy instead, as described at the top of this README.
 
 Table of Contents
 =================
